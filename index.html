@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeChat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="ChatBody">
+    <nav>
+        <img class="logo" src="FreeChat.PNG" alt="">
+        <h3 id="headLabel">Welcome to FreeChat</h3>
+    </nav>
+    <div class="container" id="boxContainer">
+        <!--  -->
+    </div>
+    <div class="send">
+        <form action="#" id="send-container">
+            <input type="text" name="messageInp" id="messageInp" autocomplete="off" placeholder=" Message" autofocus>
+            <button class="btn" type="submit">send</button>
+        </form>
+    </div>
+    <br><br>
+    <button id="toggleBtn" onclick="darkMode()">Dark mode</button><br><br>
+</body>
+<script defer src="https://cdn.socket.io/4.5.3/socket.io.min.js"></script>
+<script defer src="client.js"></script>
+<script>
+    function darkMode(){
+   var element = document.body;
+
+   if (element.style.backgroundColor != "black") {
+    
+    element.style.backgroundColor="black";
+    document.getElementById("boxContainer").style.backgroundColor= "#1C2833";
+    document.getElementById("boxContainer").style.border= "1px solid";
+    document.getElementById("boxContainer").style.borderColor= "dodgerblue";
+
+    document.getElementById("toggleBtn").style.border= "2px solid";
+    document.getElementById("toggleBtn").style.borderColor= "dodgerblue";
+    }
+
+    else{
+
+        element.style.backgroundColor="";
+        document.getElementById("boxContainer").style.backgroundColor= "";
+        document.getElementById("boxContainer").style.border= "";
+        document.getElementById("boxContainer").style.borderColor= "";
+        
+        document.getElementById("toggleBtn").style.border= "";
+        document.getElementById("toggleBtn").style.borderColor= "";
+    }
+}
+</script>
+</html>
